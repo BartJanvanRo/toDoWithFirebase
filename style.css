@@ -7,10 +7,13 @@
 body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: hsl(235, 21%, 11%);
-  font-size: 18px;
+  font-size: 1.125em;
   display: flex;
   justify-content: center;
+  color: hsl(234, 39%, 85%);
 }
+
+
 
 .background-image {
   position: absolute;
@@ -43,8 +46,8 @@ body {
 
 .title {
   color: white;
-  letter-spacing: 10px;
-  font-size: 50px;
+  letter-spacing: 0.625em;
+  font-size: 3.125em;
   font-weight: bold;
 }
 
@@ -56,8 +59,6 @@ body {
   border-radius: 6px;
   display: flex;
 }
-
-
 
 .check{
   flex-basis: 90px;
@@ -109,7 +110,7 @@ body {
 .new-todo-input input {
   width: 100%;
   padding: 10px 0px;
-  font-size: 18px;
+  font-size: 1.125em;
   background-color: transparent;
   border: none;
   outline: none;
@@ -128,8 +129,7 @@ body {
 .todo-text {
   display: flex;
   align-items: center;
-  font-size: 18px;
-  color: hsl(234, 39%, 85%);
+  
 }
 
 .todo-item {
