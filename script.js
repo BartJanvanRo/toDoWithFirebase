@@ -19,18 +19,7 @@ function getItems() {
 /* db = database */
 
 //items ophalen. navragen wat onSnap en doc.id enzo bedoelen. 
-function getItems() {
-  db.collection("todo-items").onSnapshot((snapshot) => {
-    let items = [];
-    snapshot.docs.forEach((doc) => {
-      items.push({
-        id: doc.id,
-        ...doc.data()
-      })
-    })
-    generateItems(items); //spreekt de volgende functie aan
-  })
-}
+
 
 
 
@@ -41,7 +30,7 @@ function generateItems(items) {
     itemsHTML += `
     <div class="todo-item">
               <div class="check">                                             
-              <div data-id="${item.id} class="check-mark ${item.status} == "completed" && "checked" ? "checked": ""  >
+              <div data-id="${item.id} class="check-mark" ${item.status} == "completed" && "checked" ? "checked": ""  >
       <img src="assets/icon-check.svg">
       </div>
               </div >
