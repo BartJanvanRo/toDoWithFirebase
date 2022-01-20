@@ -10,10 +10,7 @@ body {
   font-size: 1.125em;
   display: flex;
   justify-content: center;
-  color: hsl(234, 39%, 85%);
 }
-
-
 
 .background-image {
   position: absolute;
@@ -60,6 +57,15 @@ body {
   display: flex;
 }
 
+.remove-symbol{
+  flex-basis: 45px;
+display: flex;
+justify-content: center;
+align-items: top;
+color: white;
+font-size: 1.125em;
+}
+
 .check{
   flex-basis: 90px;
   display: flex;
@@ -83,13 +89,13 @@ body {
 }
 
 
-.check-mark:hover .check-mark.checked{
-  border-color: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
-  background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);   
+.check-mark.checked img, .check-mark:hover img {
+  visibility: visible;
 }
 
-.check-mark:hover .check-mark.checked img{
-  visibility: visible;
+.check-mark:hover {
+  border-color: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+  background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);   
 }
 
 .check-mark.checked {
@@ -97,7 +103,7 @@ body {
   background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);   
 }
 
-.todo-text, .checked {
+.todo-text.checked {
   text-decoration: line-through;
   color: hsl(233, 14%, 35%);
 }
@@ -130,7 +136,7 @@ body {
 .todo-text {
   display: flex;
   align-items: center;
-  
+  color: hsl(234, 39%, 85%);
 }
 
 .todo-item {
@@ -194,6 +200,8 @@ body {
   box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);
   border-color: hsl(235, 24%, 19%);
 }
+
+
 
 
 

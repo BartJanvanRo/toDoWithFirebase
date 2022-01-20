@@ -31,17 +31,65 @@ function generateItems(items) {
         todoText.classList.add("todo-text");
         todoText.innerText = item.text;
 
+        let cross = document.createElement('div');
+        cross.classList.add("remove-symbol")
+
+        cross.onclick = (e) => removeItem(e, item.id)
+
+
+
+        //visualisatie aanvinken volledig.
         if (item.status == "completed") {
             checkMark.classList.add("checked");
             todoText.classList.add("checked");
+            cross.textContent = 'x';
+            //hier ook de koppeling aantal notities en aangevinkt et
+
         }
+
         todoItem.appendChild(checkContainer);
         todoItem.appendChild(todoText);
-        todoItems.push(todoItem)
+        todoItems.push(todoItem);
+        todoItem.appendChild(cross);
+
+        let itemsLeft = document.createElement("div");
+        itemsLeft.classList.add("items-left");
+        itemsLeft.innerHTML += countActive.length
+        console.log(itemsLeft)
+
+
+
+        let removeAllSelector = document.querySelectorAll(".items-clear")
+
+
+
     })
     document.querySelector(".todo-items").replaceChildren(...todoItems);
 }
 
+
+
+function delAll() {
+    db.collection('todo-items')
+}
+
+function countAll() {
+
+    console.log("runningcountAll");
+
+    db.collection("todo-items")
+
+        .get()
+
+        .then(snap => {
+
+            size = snap.size;
+
+            document.getElementById("counterId").innerHTML = size;
+
+        });
+
+}
 
 
 function addItem(event) {
@@ -54,6 +102,32 @@ function addItem(event) {
     text.value = "";
 }
 
+
+//e event object. in event listener
+function removeItem(e, id) {
+    e.preventDefault();
+    console.log(id)
+    let item = db.collection("todo-items").doc(id);
+    item.get().then(function (doc) {
+        item.delete()
+
+    })
+}
+
+/* const removeItems = (id) => {
+    let item = db.collection("todo-items").doc(id);
+    if (item.status === "completed") {
+        item.markCompleted.push("")
+    } else {
+        break
+    }
+}
+
+ */
+
+let countActive = 0;
+
+//verwerkt de database
 function markCompleted(id) {
     let item = db.collection("todo-items").doc(id);
     item.get().then(function (doc) {
@@ -66,9 +140,26 @@ function markCompleted(id) {
                 item.update({
                     status: "active"
                 })
+                countActive++
+
             }
         }
     })
 }
 
+
+
+
+
+
 getItems();
+
+
+
+
+/* <div class="items-clear">
+          <span>Clear Completed</span>
+        </div> */
+
+/* remove the elements if/else statement  */
+
