@@ -1,0 +1,88 @@
+
+*{
+    font-family: Ubuntu;
+    font-style: normal;
+    align-items: center;
+
+}
+
+
+h1{
+    font-weight: 500;
+    font-size: 3.125em;
+    line-height: 57px;
+    display: flex;
+    color: #000000;
+}
+
+h2{
+font-weight: bold;
+font-size: 3.125em;
+line-height: 57px;
+display: flex;
+color: #000000;
+}
+
+h3{
+font-weight: normal;
+font-size: 2.1875em
+line-height: 40px;
+display: flex;
+letter-spacing: 0.1em;
+color: #000000;
+}
+
+p1{
+    font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 34px;
+display: flex;
+}
+
+
+
+.inputContainer{
+position: absolute;
+width: 1400px;
+height: 125px;
+left: calc(50% - 1400px/2);
+top: 115px;
+
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+
+.inputfield{
+position: absolute;
+left: 3.57%;
+right: 53.57%;
+top: 9.6%;
+bottom: 10.4%;
+}
+
+.centerDiv{
+    position: absolute;
+left: 61.07%;
+right: 23.71%;
+top: 33.6%;
+bottom: 34.4%;
+}
+
+
+.icon-check{
+position: absolute;
+left: 90.71%;
+right: 4.64%;
+top: 24%;
+bottom: 24%;
+}
+
+.checkBttn{
+    position: absolute;
+width: 65px;
+height: 47.68px;
+right: 64px;
+top: calc(50% - 47.68px/2 - 0.66px);
+}

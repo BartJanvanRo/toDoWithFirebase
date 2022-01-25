@@ -34,4 +34,8 @@ function markCompleted(id) {
 }
 let itemsLeft = document.createElement("div");
 itemsLeft.classList.add("items-left");
-itemsLeft.innerHTML = countCompleted
+itemsLeft.innerHTML = 
+
+
+let itemsLeft = document.createElement("div");
+        itemsLeft.classList.add("items-left");

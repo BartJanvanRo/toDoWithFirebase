@@ -52,16 +52,9 @@ function generateItems(items) {
         todoItems.push(todoItem);
         todoItem.appendChild(cross);
 
-        let itemsLeft = document.createElement("div");
-        itemsLeft.classList.add("items-left");
-        itemsLeft.innerHTML += countActive.length
-        console.log(itemsLeft)
 
 
-
-        let removeAllSelector = document.querySelectorAll(".items-clear")
-
-
+        //        let removeAllSelector = document.querySelectorAll(".items-clear")
 
     })
     document.querySelector(".todo-items").replaceChildren(...todoItems);
@@ -69,27 +62,20 @@ function generateItems(items) {
 
 
 
-function delAll() {
+/* function delAll() {
     db.collection('todo-items')
-}
+} */
 
 function countAll() {
-
-    console.log("runningcountAll");
-
-    db.collection("todo-items")
-
-        .get()
-
-        .then(snap => {
-
-            size = snap.size;
-
-            document.getElementById("counterId").innerHTML = size;
-
-        });
+    //    console.log("runningcountAll");
+    db.collection("todo-items").where("status", "==", "active").get().then(snap => {
+        size = snap.size;
+        document.getElementById("counterId").innerHTML = size;
+    });
 
 }
+
+
 
 
 function addItem(event) {
@@ -125,7 +111,6 @@ function removeItem(e, id) {
 
  */
 
-let countActive = 0;
 
 //verwerkt de database
 function markCompleted(id) {
@@ -140,8 +125,6 @@ function markCompleted(id) {
                 item.update({
                     status: "active"
                 })
-                countActive++
-
             }
         }
     })
@@ -150,9 +133,18 @@ function markCompleted(id) {
 
 
 
-
+function compDeleter() {
+    var item = db.collection("todo-items").where("status", "==", "completed");
+    item.get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+            doc.ref.delete();
+        });
+        countAll();
+    });
+}
 
 getItems();
+countAll();
 
 
 

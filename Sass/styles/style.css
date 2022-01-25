@@ -1,0 +1,36 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: purple 4px dotted;
+  background: #192267;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+button {
+  background: #1e4603;
+  color: #e8e83a;
+}
+
+button:hover {
+  background: red;
+}
+
+.info {
+  background: gold;
+}
+
+.info h1 {
+  background: brown;
+}
+/*# sourceMappingURL=style.css.map */

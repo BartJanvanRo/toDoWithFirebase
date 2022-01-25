@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eigen studie</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-app.min.js"
+        integrity="sha512-XNRpfd3CxEDrXcXWvht51k3l8G5cZhcY0kehFjUohBhgRDCozbdSaGz3w96WlDxAgiNZndKnpn1+4532FS3p3w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-firestore.min.js"
+        integrity="sha512-5mAQjqpXMGEvRH48JD3KJC750vTeD+83f1UxnRt1Ur6enn77FrK+MqIU0dkUn7judeBsjsv6xLHC//YFnRQVAw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase.js"
+        integrity="sha512-7NBxPO/qRUrKc+Wi9GbYz0YEzMpi2UMP3mtLcswnvzI0vUFP5Jb7HNVd1V8NmEhXpSe3ZLsoGEhwRHpAZDpYPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<h1>The wishlist</h1>
+
+<div class="content">
+    <form action="" id="add-wish-form">
+        <input type="text" name="text" placeholder="What to wish" />
+        <input type="text" name="status" placeholder="active" />
+        <!--  <div class="check">
+            <div class="check-mark">
+                <img src="./assets/icon-check.svg">
+            </div>
+        </div> -->
+        <button><img src="./assets/icon-check.svg"></button>
+
+</div>
+</form>
+<ul id="wishList">
+    <li>
+        <span class="toggle status">
+            <span class="toggle-button"></span>
+            <span class="status-text">temp text</span>
+    </li>
+</ul>
+</div>
+
+<script src="firebase.js"></script>
+<script src="script.js"></script>
+
+<body>
+
+</body>
+
+</html>

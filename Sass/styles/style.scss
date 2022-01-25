@@ -1,0 +1,31 @@
+$mycolor: rgb(30, 70, 3);
+
+
+@mixin flexcenter($direction, $backgroundcolor, $type) {
+  display: flex;
+  justify-content: $direction;
+  align-items: center;
+  border: $backgroundcolor 4px $type;
+}
+
+body {
+  @include flexcenter(center, purple, dotted);
+  background: rgb(25, 34, 103);
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background: $mycolor;
+  color: rgb(232, 232, 58);
+  &:hover {
+    background: red
+  }
+}
+
+.info {
+  background: gold;
+  h1 {
+    background: brown;
+  }
+}
