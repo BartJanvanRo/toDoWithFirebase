@@ -1,88 +1,230 @@
-
-*{
+body {
     font-family: Ubuntu;
     font-style: normal;
     align-items: center;
-
+    background: linear-gradient(0deg, #C7C7C7, #C7C7C7), #FFFFFF;
 }
 
 
-h1{
+h1 {
     font-weight: 500;
-    font-size: 3.125em;
-    line-height: 57px;
-    display: flex;
+    font-size: 3em;
     color: #000000;
 }
 
-h2{
-font-weight: bold;
-font-size: 3.125em;
-line-height: 57px;
-display: flex;
-color: #000000;
+h2 {
+    font-weight: bold;
+    font-size: 3em;
+    color: #000000;
 }
 
-h3{
-font-weight: normal;
-font-size: 2.1875em
-line-height: 40px;
-display: flex;
-letter-spacing: 0.1em;
-color: #000000;
+h3 {
+    font-weight: normal;
+    font-size: 2em;
+    letter-spacing: 0.1em;
+    color: #000000;
 }
 
-p1{
+p {
     font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 34px;
-display: flex;
+    font-weight: normal;
+    font-size: 30px;
 }
 
+/* ------------------------------------ */
 
 
-.inputContainer{
-position: absolute;
-width: 1400px;
-height: 125px;
-left: calc(50% - 1400px/2);
-top: 115px;
-
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.containerAll {
+    width: 85%;
+    padding-left: 5%;
 }
 
-
-
-.inputfield{
-position: absolute;
-left: 3.57%;
-right: 53.57%;
-top: 9.6%;
-bottom: 10.4%;
+.containerCenter {
+    width: 85%;
+    padding-left: 5%;
 }
 
-.centerDiv{
+span {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 5%;
+
+}
+
+.completed {
+    margin: 0% 0% 0% 5%;
+}
+
+/* ------------------------------------- */
+.wishListTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------------------------ */
+.inputContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 5%;
+    align-items: center;
+    background: #B0DCC4;
+    border-radius: 0px 50px 0px 0px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.inputField {
+    width: 65%;
+    height: 50px;
+    align-items: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    box-sizing: border-box;
+}
+
+.inspireText {
+    display: flex;
+    padding: 0% 10%;
+}
+
+button {
+    border: none;
+    background-color: #B0DCC4;
+}
+
+.buttonField {
+    display: flex;
+    align-items: center;
+}
+
+svg:hover {
+    fill: red;
+}
+
+/* -------------------------------- */
+
+.wishContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 1% 0%;
+    padding-left: 5%;
+    background: #c9e2d4;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    align-items: center;
+}
+
+.wishName {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.status {
+    padding-left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cross {}
+
+
+/* ------------------------------------------ */
+.footerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    background: #B0DCC4;
+    border-radius: 0px 0px 0px 50px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#counterId {
+    width: 1.8em;
+}
+
+.toggle .toggle-button {
     position: absolute;
-left: 61.07%;
-right: 23.71%;
-top: 33.6%;
-bottom: 34.4%;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.toggle.active {
+    background: cornflowerblue;
+    left: 45px
 }
 
 
-.icon-check{
-position: absolute;
-left: 90.71%;
-right: 4.64%;
-top: 24%;
-bottom: 24%;
+.switch {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 120px;
+    height: 34px;
 }
 
-.checkBttn{
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
     position: absolute;
-width: 65px;
-height: 47.68px;
-right: 64px;
-top: calc(50% - 47.68px/2 - 0.66px);
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }

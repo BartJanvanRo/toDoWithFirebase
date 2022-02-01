@@ -50,7 +50,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   db.collection("todo-items").add({
     text: form.text.value,
-    status: form.status.value
+    status: "active"
   });
   // maakt het leeg:
   form.text.value = ''

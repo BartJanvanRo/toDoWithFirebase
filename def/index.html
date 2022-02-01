@@ -5,19 +5,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wishlist</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Wishlist</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-app.min.js"
+        integrity="sha512-XNRpfd3CxEDrXcXWvht51k3l8G5cZhcY0kehFjUohBhgRDCozbdSaGz3w96WlDxAgiNZndKnpn1+4532FS3p3w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-firestore.min.js"
+        integrity="sha512-5mAQjqpXMGEvRH48JD3KJC750vTeD+83f1UxnRt1Ur6enn77FrK+MqIU0dkUn7judeBsjsv6xLHC//YFnRQVAw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase.js"
+        integrity="sha512-7NBxPO/qRUrKc+Wi9GbYz0YEzMpi2UMP3mtLcswnvzI0vUFP5Jb7HNVd1V8NmEhXpSe3ZLsoGEhwRHpAZDpYPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+
 </head>
 
 <body>
-    <h1>test1</h1>
-    <h2>test2</h2>
-    <h3>test 3</h3>
+    <div class="containerAll">
+        <div class="wishListTitle" id="titleAlign">
+            <h1>Wishlist</h1>
+        </div>
+
+        <form onsubmit="addItem()" class="inputContainer">
+            <input type="text" name="text" id="inputField" placeholder="What to wish" />
+            <div class="inspireText">
+                <h3>Get it done</h3>
+            </div>
+            <button class="check-mark">
+                <img src="assets/icon-check.svg" onclick="addItem()">
+            </button>
+        </form>
+    </div>
+    <div class="containerCenter"></div>
+    <!--   <div class="containerCenter">
+        <div class="wishContainer">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <div class="wishName">
+                <h2>This wish</h2>
+            </div>
+            <div class="status">
+                <h3>In progress.</h3>
+            </div>
+        </div>
+    </div> -->
+
+    <!--    <div class="wishContainer">
+        <label class="switch">
+            <input type="checkbox" onclick="markCompleted()">
+            <span class="slider round"></span>
+        </label>
+        <div class="wishName">
+            <h2>This wish</h2>
+        </div>
+        <span class="status">
+            <h3>In progress.</h3>
+        </span>
+    </div>
+ -->
+    <div class="containerAll">
+        <div class="footerContainer">
+            <span>
+                <h3><span id="counterId">535</span> items left</h3>
+            </span>
+            <span id="completed" onclick="compDeleter()">
+                <h3>Clear Completed</h3>
+            </span>
+        </div>
+    </div>
+    </div>
 </body>
 
 </html>
+<script src="firebase.js"></script>
+<script src="script2.js"></script>
